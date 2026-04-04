@@ -2,7 +2,7 @@ const userModel = require("../models/user.model")
 const jwt = require('jsonwebtoken')
 
 
-async function authMiddlewareFunc(req, res, next){
+async function authMiddleware(req, res, next){
     const token = req.cookies.token || req.header.authorization?.split(" ")[1]
     if (!token) {
         return res.status(401).json({
@@ -26,5 +26,5 @@ async function authMiddlewareFunc(req, res, next){
 
 
 module.exports = {
-    authMiddlewareFunc
+    authMiddleware
 }

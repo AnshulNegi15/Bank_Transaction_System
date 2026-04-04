@@ -10,6 +10,6 @@ const router = express.Router()
  * - Create a new account
  * - Protected Route
  */
-router.post("/", authMiddleware.authMiddlewareFunc, accountController.createAccount)
+router.post("/", authMiddleware.authMiddleware, accountController.createAccount)
 
 module.exports = router
